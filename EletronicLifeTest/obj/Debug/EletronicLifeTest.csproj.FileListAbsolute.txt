@@ -1,0 +1,9 @@
+C:\Projetos\EletronicLifeTest\EletronicLifeTest\bin\Debug\EletronicLifeTest.exe.config
+C:\Projetos\EletronicLifeTest\EletronicLifeTest\obj\Debug\EletronicLifeTest.csprojResolveAssemblyReference.cache
+C:\Projetos\EletronicLifeTest\EletronicLifeTest\obj\Debug\EletronicLifeTest.Properties.Resources.resources
+C:\Projetos\EletronicLifeTest\EletronicLifeTest\obj\Debug\EletronicLifeTest.csproj.GenerateResource.Cache
+C:\Projetos\EletronicLifeTest\EletronicLifeTest\bin\Debug\EletronicLifeTest.exe
+C:\Projetos\EletronicLifeTest\EletronicLifeTest\bin\Debug\EletronicLifeTest.pdb
+C:\Projetos\EletronicLifeTest\EletronicLifeTest\obj\Debug\EletronicLifeTest.exe
+C:\Projetos\EletronicLifeTest\EletronicLifeTest\obj\Debug\EletronicLifeTest.pdb
+C:\Projetos\EletronicLifeTest\EletronicLifeTest\obj\Debug\EletronicLifeTest.Form1.resources
