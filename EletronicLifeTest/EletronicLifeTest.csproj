@@ -50,6 +50,7 @@
     <Compile Include="Critters\BouncingCritter.cs" />
     <Compile Include="Critters\Critter.cs" />
     <Compile Include="Critters\WallCritter.cs" />
+    <Compile Include="Critters\WallFollower.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="Directions.cs" />
     <Compile Include="Helpers\Extensions.cs" />

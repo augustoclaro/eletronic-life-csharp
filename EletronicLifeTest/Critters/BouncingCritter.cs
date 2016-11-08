@@ -9,10 +9,6 @@ namespace EletronicLifeTest.Critters
     {
         private Direction _direction = Directions.FromId(Directions.Names.RandOne());
 
-        public BouncingCritter()
-        {
-        }
-
         public IAction Act(View view)
         {
             if (view.Look(_direction) != " ")

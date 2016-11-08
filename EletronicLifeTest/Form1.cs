@@ -10,22 +10,18 @@ namespace EletronicLifeTest
     {
         private World _world = new World(new[]
             {
-                "############################",
-                "#      #    #      o      ##",
-                "#                          #",
-                "#          #####           #",
-                "##         #   #    ##     #",
-                "###           ##     #     #",
-                "#           ###      #     #",
-                "#   ####                   #",
-                "#   ##       o             #",
-                "# o  #         o       ### #",
-                "#    #                     #",
-                "############################"
+               "############",
+               "#     #    #",
+               "#   ~    ~ #",
+               "#  ##      #",
+               "#  ##  o####",
+               "#          #",
+               "############"
             }, new Dictionary<char, System.Type>
             {
                 ['#'] = typeof(WallCritter),
-                ['o'] = typeof(BouncingCritter)
+                ['o'] = typeof(BouncingCritter),
+                ['~'] = typeof(WallFollower)
             });
 
         public Form1()
