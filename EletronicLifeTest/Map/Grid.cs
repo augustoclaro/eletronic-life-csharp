@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace EletronicLifeTest.Map
 {
@@ -6,13 +7,15 @@ namespace EletronicLifeTest.Map
     {
         public int Width { get; set; }
         public int Height { get; set; }
-        private object[] _space;
+        public object[] Space { get; set; }
+        public int NullCount => Space.Count(o => o == null);
+        public int NotNullCount => Space.Count(o => o != null);
 
         public Grid(int width, int height)
         {
             Width = width;
             Height = height;
-            _space = new object[width * height];
+            Space = new object[width * height];
         }
 
         public bool HasVector(Vector vector)
@@ -23,11 +26,11 @@ namespace EletronicLifeTest.Map
         {
             get
             {
-                return _space[x + Width * y];
+                return Space[x + Width * y];
             }
             set
             {
-                _space[x + Width * y] = value;
+                Space[x + Width * y] = value;
             }
         }
 
