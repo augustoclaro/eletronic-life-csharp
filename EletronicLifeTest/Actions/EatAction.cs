@@ -4,11 +4,11 @@ using EletronicLifeTest.Map;
 
 namespace EletronicLifeTest.Actions
 {
-    public class MoveAction : IAction
+    public class EatAction : IAction
     {
         public Direction Direction { get; set; }
 
-        public MoveAction(Direction direction)
+        public EatAction(Direction direction)
         {
             Direction = direction;
         }
@@ -17,11 +17,11 @@ namespace EletronicLifeTest.Actions
         {
             var dest = vector + Direction.Vector;
             var critter = actor as Critter;
-            if (critter != null && world.Grid.HasVector(dest) && world.Grid[dest] == null && critter.Energy > 1)
+            var atDest = world.Grid[dest] as Critter;
+            if (critter != null && atDest != null && atDest.Energy != null)
             {
-                critter.Energy--;
-                world.Grid[vector] = null;
-                world.Grid[dest] = actor;
+                critter.Energy += atDest.Energy;
+                world.Grid[dest] = null;
                 return true;
             }
             return false;

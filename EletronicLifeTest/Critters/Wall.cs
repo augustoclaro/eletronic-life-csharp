@@ -1,8 +1,8 @@
 ﻿namespace EletronicLifeTest.Critters
 {
-    public class WallCritter : Critter
+    public class Wall : Critter
     {
-        public WallCritter()
+        public Wall() : base(null)
         {
         }
     }

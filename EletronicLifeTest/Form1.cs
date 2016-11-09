@@ -10,25 +10,31 @@ namespace EletronicLifeTest
     {
         private World _world = new World(new[]
             {
-               "############",
-               "#     #    #",
-               "#   ~    ~ #",
-               "#  ##      #",
-               "#  ##  o####",
-               "#          #",
-               "############"
+               "############################",
+               "#####                 ######",
+               "##   ***                **##",
+               "#   *##**         **  O  *##",
+               "#    ***     O    ##**    *#",
+               "#       O         ##***    #",
+               "#                 ##**     #",
+               "#   O       #*             #",
+               "#*          #**       O    #",
+               "#***        ##**    O    **#",
+               "##****     ###***       *###",
+               "############################"
             }, new Dictionary<char, System.Type>
             {
-                ['#'] = typeof(WallCritter),
-                ['o'] = typeof(BouncingCritter),
-                ['~'] = typeof(WallFollower)
+                ['#'] = typeof(Wall),
+                ['O'] = typeof(PlantEater),
+                ['*'] = typeof(Plant)
             });
 
         public Form1()
         {
             InitializeComponent();
-            label1.Font = new Font(FontFamily.GenericMonospace, 20);
-            label1.Text = _world.ToString();
+            textBox1.Font = new Font(FontFamily.GenericMonospace, 20);
+            textBox1.Text = _world.ToString();
+            timer1.Interval = 1000;
         }
 
         private void button1_Click(object sender, System.EventArgs e)
@@ -44,7 +50,7 @@ namespace EletronicLifeTest
         private void timer1_Tick(object sender, System.EventArgs e)
         {
             _world.Turn();
-            label1.Text = _world.ToString();
+            textBox1.Text = _world.ToString();
         }
     }
 }

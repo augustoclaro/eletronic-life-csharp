@@ -1,27 +1,30 @@
 ﻿using EletronicLifeTest.Critters;
+using EletronicLifeTest.Helpers;
 using EletronicLifeTest.Interfaces;
 using EletronicLifeTest.Map;
+using System;
 
 namespace EletronicLifeTest.Actions
 {
-    public class MoveAction : IAction
+    public class ReproduceAction : IAction
     {
         public Direction Direction { get; set; }
 
-        public MoveAction(Direction direction)
+        public ReproduceAction(Direction direction)
         {
             Direction = direction;
         }
 
         public bool PerformAction(World world, Vector vector, IActor actor)
         {
+            Util.Repro(actor.GetType());
+            var baby = Activator.CreateInstance(actor.GetType()) as Critter;
             var dest = vector + Direction.Vector;
             var critter = actor as Critter;
-            if (critter != null && world.Grid.HasVector(dest) && world.Grid[dest] == null && critter.Energy > 1)
+            if (baby != null && critter != null && world.Grid.HasVector(dest) && world.Grid[dest] == null && critter.Energy > 2 * baby.Energy)
             {
-                critter.Energy--;
-                world.Grid[vector] = null;
-                world.Grid[dest] = actor;
+                critter.Energy -= 2 * baby.Energy;
+                world.Grid[dest] = baby;
                 return true;
             }
             return false;

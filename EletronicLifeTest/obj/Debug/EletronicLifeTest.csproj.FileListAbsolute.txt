@@ -7,3 +7,12 @@ C:\Projetos\EletronicLifeTest\EletronicLifeTest\bin\Debug\EletronicLifeTest.pdb
 C:\Projetos\EletronicLifeTest\EletronicLifeTest\obj\Debug\EletronicLifeTest.exe
 C:\Projetos\EletronicLifeTest\EletronicLifeTest\obj\Debug\EletronicLifeTest.pdb
 C:\Projetos\EletronicLifeTest\EletronicLifeTest\obj\Debug\EletronicLifeTest.Form1.resources
+C:\Projetos\eletronic-life-csharp\EletronicLifeTest\bin\Debug\EletronicLifeTest.exe.config
+C:\Projetos\eletronic-life-csharp\EletronicLifeTest\obj\Debug\EletronicLifeTest.exe
+C:\Projetos\eletronic-life-csharp\EletronicLifeTest\obj\Debug\EletronicLifeTest.pdb
+C:\Projetos\eletronic-life-csharp\EletronicLifeTest\bin\Debug\EletronicLifeTest.exe
+C:\Projetos\eletronic-life-csharp\EletronicLifeTest\bin\Debug\EletronicLifeTest.pdb
+C:\Projetos\eletronic-life-csharp\EletronicLifeTest\obj\Debug\EletronicLifeTest.csprojResolveAssemblyReference.cache
+C:\Projetos\eletronic-life-csharp\EletronicLifeTest\obj\Debug\EletronicLifeTest.Form1.resources
+C:\Projetos\eletronic-life-csharp\EletronicLifeTest\obj\Debug\EletronicLifeTest.Properties.Resources.resources
+C:\Projetos\eletronic-life-csharp\EletronicLifeTest\obj\Debug\EletronicLifeTest.csproj.GenerateResource.Cache

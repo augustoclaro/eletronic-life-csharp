@@ -34,32 +34,55 @@ namespace EletronicLifeTest.Map
         public void Turn()
         {
             var acted = new List<IActor>();
-            Grid.ForEachSpace((vector, obj) =>
-            {
-                var actor = obj as IActor;
-                if (actor != null && !acted.Contains(actor))
+            for (var y = 0; y < Grid.Height; y++)
+                for (var x = 0; x < Grid.Width; x++)
                 {
-                    acted.Add(actor);
-                    var action = actor.Act(new View(this, vector));
-                    if (action != null)
-                        action.PerformAction(this, vector, actor);
+                    var vector = new Vector(x, y);
+                    var actor = Grid[vector] as IActor;
+                    if (actor != null && !acted.Contains(actor))
+                    {
+                        acted.Add(actor);
+                        LetAct(actor, vector);
+                    }
                 }
-            });
+        }
+
+        public virtual void LetAct(IActor actor, Vector vector)
+        {
+            //var action = actor.Act(new View(this, vector));
+            //if (action != null)
+            //    action.PerformAction(this, vector, actor);
+
+            
+            var action = actor.Act(new View(this, vector));
+            if (action == null || !action.PerformAction(this, vector, actor))
+            {
+                var critter = actor as Critter;
+                if (critter != null)
+                {
+                    critter.Energy -= .2m;
+                    if (critter.Energy <= 0)
+                        Grid[vector] = null;
+                }
+            }
         }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
             int lastY = 0;
-            Grid.ForEachSpace((vector, obj) =>
-            {
-                if (vector.Y != lastY)
+            for (var y = 0; y < Grid.Height; y++)
+                for (var x = 0; x < Grid.Width; x++)
                 {
-                    lastY = vector.Y;
-                    sb.Append(Environment.NewLine);
+                    var obj = Grid[x, y];
+                    if (y != lastY)
+                    {
+                        lastY = y;
+                        sb.Append(Environment.NewLine);
+                    }
+                    sb.Append(obj == null ? ' ' : ((Critter)obj).Id);
                 }
-                sb.Append(obj == null ? ' ' : ((Critter)obj).Id);
-            });
+
             return sb.ToString();
         }
     }

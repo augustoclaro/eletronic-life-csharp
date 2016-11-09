@@ -46,11 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actions\EatAction.cs" />
+    <Compile Include="Actions\GrowAction.cs" />
     <Compile Include="Actions\MoveAction.cs" />
-    <Compile Include="Critters\BouncingCritter.cs" />
+    <Compile Include="Actions\ReproduceAction.cs" />
     <Compile Include="Critters\Critter.cs" />
-    <Compile Include="Critters\WallCritter.cs" />
-    <Compile Include="Critters\WallFollower.cs" />
+    <Compile Include="Critters\PlantEater.cs" />
+    <Compile Include="Critters\Plant.cs" />
+    <Compile Include="Critters\Wall.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="Directions.cs" />
     <Compile Include="Helpers\Extensions.cs" />
@@ -60,9 +63,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Util.cs" />
     <Compile Include="Interfaces\IAction.cs" />
     <Compile Include="Interfaces\IActor.cs" />
     <Compile Include="Map\Grid.cs" />
+    <Compile Include="Map\LifelikeWorld.cs" />
     <Compile Include="Map\Vector.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
