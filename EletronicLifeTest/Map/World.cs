@@ -3,7 +3,6 @@ using EletronicLifeTest.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace EletronicLifeTest.Map
 {
@@ -32,6 +31,8 @@ namespace EletronicLifeTest.Map
             }
         }
 
+        public int Turns;
+
         public void Turn()
         {
             var acted = new List<IActor>();
@@ -46,6 +47,7 @@ namespace EletronicLifeTest.Map
                         LetAct(actor, vector);
                     }
                 }
+            Turns++;
         }
 
         public virtual void LetAct(IActor actor, Vector vector)
@@ -54,7 +56,6 @@ namespace EletronicLifeTest.Map
             //if (action != null)
             //    action.PerformAction(this, vector, actor);
 
-            
             var action = actor.Act(new View(this, vector));
             if (action == null || !action.PerformAction(this, vector, actor))
             {
@@ -69,22 +70,10 @@ namespace EletronicLifeTest.Map
         }
 
         public override string ToString()
-        {
-            var sb = new StringBuilder();
-            int lastY = 0;
-            for (var y = 0; y < Grid.Height; y++)
-                for (var x = 0; x < Grid.Width; x++)
-                {
-                    var obj = Grid[x, y];
-                    if (y != lastY)
-                    {
-                        lastY = y;
-                        sb.Append(Environment.NewLine);
-                    }
-                    sb.Append(obj == null ? ' ' : ((Critter)obj).Id);
-                }
-
-            return sb.ToString();
-        }
+            => string.Join(Environment.NewLine, 
+                Enumerable.Range(0, Grid.Height)
+                    .Select(y => string.Join("", 
+                        Enumerable.Range(0, Grid.Width)
+                            .Select(x => Grid[x, y] == null ? " " : ((Critter)Grid[x, y]).Id.ToString()))));
     }
 }

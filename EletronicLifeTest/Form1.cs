@@ -34,13 +34,13 @@ namespace EletronicLifeTest
             InitializeComponent();
             textBox1.Font = new Font(FontFamily.GenericMonospace, 20);
             textBox1.Text = _world.ToString();
-            timer1.Interval = 1000;
+            timer1.Interval = 100;
         }
 
         private void button1_Click(object sender, System.EventArgs e)
         {
             //_world.Turn();
-            //label1.Text = _world.ToString();
+            //textBox1.Text = _world.ToString();
 
             if (!timer1.Enabled)
                 timer1.Start();
